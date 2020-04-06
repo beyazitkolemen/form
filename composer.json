@@ -1,10 +1,10 @@
 {
-    "name": "adamwathan/form",
+    "name": "beyazitkolemen/form",
     "description": "A basic framework agnostic form building package with a few extra niceties like remembering old input and retrieving error messages.",
     "authors": [
         {
-            "name": "Adam Wathan",
-            "email": "adam.wathan@gmail.com"
+            "name": "Beyazıt Kölemen",
+            "email": "beyazit@artf4.com"
         }
     ],
     "license": "MIT",
