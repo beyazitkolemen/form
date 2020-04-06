@@ -22,7 +22,7 @@ Boring name for a boring package. Builds form HTML with a fluent-ish, hopefully 
 You can install this package via Composer by running this command in your terminal in the root of your project:
 
 ```bash
-composer require adamwathan/form
+composer require beyazitkolemen/form
 ```
 
 ### Laravel
@@ -36,7 +36,7 @@ To do so, just update the `providers` array in your `config/app.php`:
 ```php
 'providers' => [
         //...
-        'AdamWathan\Form\FormServiceProvider'
+        'BeyazitKolemen\Form\FormServiceProvider'
     ],
 ```
 
@@ -45,7 +45,7 @@ You can also choose to use the Facade by adding an alias in `config/app.php`:
 ```php
 'aliases' => [
         //...
-        'Form' => 'AdamWathan\Form\Facades\Form',
+        'Form' => 'BeyazitKolemen\Form\Facades\Form',
     ],
 ```
 
@@ -70,7 +70,7 @@ You can also choose to use the Facade by adding an alias in `config/app.php`:
 First, instantiate a FormBuilder...
 
 ```php
-$builder = new AdamWathan\Form\FormBuilder;
+$builder = new BeyazitKolemen\Form\FormBuilder;
 ```
 
 Next, use the FormBuilder to build an element. For example:
