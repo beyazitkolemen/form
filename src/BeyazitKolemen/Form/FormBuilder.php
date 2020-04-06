@@ -70,6 +70,16 @@ class FormBuilder {
 
 		return $text;
 	}
+	public function translatetext($name, $trans) {
+		$newname = $trans . '[' . $name . ']';
+
+		$text = new Text($newname);
+		if (!is_null($value = $this->getBoundData($trans, $name))) {
+			$text->value($this->getBoundData($trans, $name));
+		}
+
+		return $text;
+	}
 
 	public function date($name) {
 		$date = new Date($name);
@@ -116,6 +126,16 @@ class FormBuilder {
 
 		if (!is_null($value = $this->getValueFor($name))) {
 			$textarea->value($value);
+		}
+
+		return $textarea;
+	}
+	public function translatetextarea($name, $trans) {
+		$newname = $trans . '[' . $name . ']';
+
+		$textarea = new TextArea($newname);
+		if (!is_null($value = $this->getBoundData($trans, $name))) {
+			$textarea->value($this->getBoundData($trans, $name));
 		}
 
 		return $textarea;
@@ -248,6 +268,18 @@ class FormBuilder {
 
 	protected function getBoundValue($name, $default) {
 		return $this->boundData->get($name, $default);
+	}
+	protected function getBoundData($trans, $name) {
+
+		$data = $this->boundData;
+		if (isset($data)) {
+
+			$value = $data->data()->translate($trans)->$name;
+		} else {
+			$value = null;
+		}
+
+		return $value;
 	}
 
 	protected function unbindData() {
