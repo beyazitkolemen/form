@@ -274,7 +274,13 @@ class FormBuilder {
 		$data = $this->boundData;
 		if (isset($data)) {
 
-			$value = $data->data()->translate($trans)->$name;
+			if (!is_null($data->data()->translate($trans))) {
+				$value = $data->data()->translate($trans)->$name;
+
+			} else {
+				$value = null;
+			}
+
 		} else {
 			$value = null;
 		}
